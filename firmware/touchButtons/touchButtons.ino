@@ -14,8 +14,8 @@ void setup()
   // No pins to setup, pins can still be used regularly, although it will affect readings
 
   Serial.begin(9600);
-  ref0 = analogRead(A6);
-  //ref0 = ADCTouch.read(A6, 500);    //create reference values to
+  //ref0 = analogRead(A6);
+  ref0 = ADCTouch.read(A0, 500);    //create reference values to
   ref1 = ADCTouch.read(A1, 500);    //account for the capacitance of the pad
 
   // make the pushButton pin an input:
@@ -26,16 +26,16 @@ void setup()
 
 void loop()
 {
-  int value0 = analogRead(A6);   //no second parameter
-  //int value0 = ADCTouch.read(A0);   //no second parameter
+  //int value0 = analogRead(A6);   //no second parameter
+  int value0 = ADCTouch.read(A0);   //no second parameter
   int value1 = ADCTouch.read(A1);   //   --> 100 samples
 
   value0 -= ref0;       //remove offset
   value1 -= ref1;
 
-  if (value0 < 120)
+  if (value0 > 40)
+  //if (value0 < 120)
   {
-    //if (value0 > 40)
     buttonState = HIGH;
   }
 
@@ -76,5 +76,7 @@ void loop()
   Serial.println(value0);
   delay(100);
 }
+
+
 
 
