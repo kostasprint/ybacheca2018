@@ -102,7 +102,7 @@ void loop()
 
   //set all states
   for(int i = 0; i<16; i++){
-    if (signals[i].value > 100)
+    if (signals[i].value > 90)
     {
       //if (value0 > 40)
       signals[i].state = HIGH;
