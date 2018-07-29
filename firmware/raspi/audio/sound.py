@@ -17,4 +17,4 @@ while True:
 
 pygame.mixer.music.play()
 
-time.sleep(10)
+time.sleep(20)
