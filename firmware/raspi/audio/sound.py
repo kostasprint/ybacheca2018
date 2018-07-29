@@ -2,20 +2,14 @@ import pygame
 import sys
 import pygame.locals
 import time
-
+import click
 pygame.init()
-
 pygame.mixer.music.load("Doorbell.WAV")
-
 while True:
-    for event in pygame.event.get():
-        if event.key == pygame.K_p:
-             pygame.mixer.music.play() #Do what you want to here
-             pass
-        if event.type == pygame.locals.QUIT:
-             pygame.quit()
-             sys.exit()
+    key = click.getchar()
+    if key=="k":
+        print(key)
+        pygame.mixer.music.play()
 
-pygame.mixer.music.play()
 
 time.sleep(20)
