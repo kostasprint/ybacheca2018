@@ -4,7 +4,7 @@ import time
 
 pygame.init()
 
-pygame.mixer.music.load("Doorbell.WAV")
+pygame.mixer.music.load("Doorbell.mp3")
 
 while True:
     for event in pygame.event.get():
