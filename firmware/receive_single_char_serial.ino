@@ -116,8 +116,6 @@ void loop() {
         && (signals[i].state == HIGH)) {
           switch (i){
             case 0: 
-            Keyboard.press(107);
-            Keyboard.releaseAll();
             Keyboard.press(128);
             Keyboard.press(108);
             delay(100);
@@ -126,17 +124,21 @@ void loop() {
             Keyboard.print("^C)1");
             Keyboard.press(176);
             Keyboard.releaseAll();
+            delay(100);
+            Keyboard.press(107);
+            Keyboard.releaseAll();
             break;
             
             case 1: 
-            Keyboard.press(107);
-            Keyboard.releaseAll();
             Keyboard.press(128);
             Keyboard.press(108);
             delay(100);
             Keyboard.releaseAll();
-            Keyboard.print("ff3300.com&demo?ode&BACHECA&_S)OPEN/SPACE");
+            Keyboard.print("ff3300.com&demo?ode&BACHECA&_S)CICLOFFICINA");
             Keyboard.press(176);
+            Keyboard.releaseAll();
+            delay(100);
+            Keyboard.press(107);
             Keyboard.releaseAll();
             break;
 //            
