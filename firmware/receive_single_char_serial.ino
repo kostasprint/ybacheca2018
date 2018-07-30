@@ -127,6 +127,10 @@ void loop() {
             delay(100);
             Keyboard.press(107);
             Keyboard.releaseAll();
+
+            
+            lastPressTime = millis();
+            onStartPage = false;
             break;
             
             case 1: 
@@ -134,12 +138,15 @@ void loop() {
             Keyboard.press(108);
             delay(100);
             Keyboard.releaseAll();
-            Keyboard.print("ff3300.com&demo?ode&BACHECA&_S)CICLOFFICINA");
+            Keyboard.print("ff3300.com&demo?ode&BACHECA&_S)OPEN/SPACE");
             Keyboard.press(176);
             Keyboard.releaseAll();
             delay(100);
             Keyboard.press(107);
             Keyboard.releaseAll();
+            
+            lastPressTime = millis();
+            onStartPage = false;
             break;
 //            
 //            case 2:
@@ -184,6 +191,11 @@ void loop() {
           }
         }
   }
+
+  for(int i = 0; i<6; i++){
+  signals[i].prevState = signals[i].state;
+  }
+
   
   recvOneChar();
   
@@ -192,7 +204,7 @@ void loop() {
   onStartPage = false;
   }
   
-  if (((millis() - lastPressTime) > 10000) && !onStartPage){
+  if (((millis() - lastPressTime) > 15000) && !onStartPage){
       Keyboard.press(128);
       Keyboard.press(108);
       delay(100);
