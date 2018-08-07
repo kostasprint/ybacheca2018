@@ -1,4 +1,4 @@
-# ybacheca2018
+# Y bacheca digitale XYZ2018
 
 Questo è il progetto del sistema bacheca sviluppato durante xyz2018
 
